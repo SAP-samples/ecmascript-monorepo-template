@@ -14,7 +14,7 @@
     "*"
   ],
   "contributes": {},
-  "repository": "https://github.com/sap-samples/ecmascript_mono_repo_template",
+  "repository": "https://github.com/sap-samples/ecmascript_monorepo_template",
   "engines": {
     "vscode": "^1.49.0"
   },
@@ -27,8 +27,8 @@
     "package": "vsce package --yarn"
   },
   "dependencies": {
-    "@ecmascript_mono_repo_template/npm_package_javascript_library": "0.1.0",
-    "@ecmascript_mono_repo_template/npm_package_typescript_library": "0.1.0"
+    "@ecmascript_monorepo_template/npm_package_javascript_library": "0.1.0",
+    "@ecmascript_monorepo_template/npm_package_typescript_library": "0.1.0"
   },
   "devDependencies": {
     "@types/vscode": "1.49.0",

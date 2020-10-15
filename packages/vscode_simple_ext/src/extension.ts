@@ -1,6 +1,6 @@
 import { window } from "vscode";
-import { multiply } from "@ecmascript_mono_repo_template/npm_package_javascript_library";
-import { add } from "@ecmascript_mono_repo_template/npm_package_typescript_library";
+import { multiply } from "@ecmascript_monorepo_template/npm_package_javascript_library";
+import { add } from "@ecmascript_monorepo_template/npm_package_typescript_library";
 
 export async function activate(): Promise<void> {
   const channel = window.createOutputChannel("vscode-simple_ext");

@@ -1,5 +1,5 @@
 {
-  "name": "@ecmascript_mono_repo_template/npm_package_javascript_library",
+  "name": "@ecmascript_monorepo_template/npm_package_javascript_library",
   "version": "0.1.0",
   "description": "Opinionated example for a pure JavaScript library as part of a mono repo",
   "keywords": [
@@ -7,7 +7,7 @@
     "typechecking"
   ],
   "main": "lib/api.js",
-  "repository": "https://github.com/sap-samples/ecmascript_mono_repo_template/",
+  "repository": "https://github.com/sap-samples/ecmascript_monorepo_template/",
   "license": "CC-BY-4.0",
   "typings": "./api.d.ts",
   "files": [
