@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "ci": "npm-run-all clean lint && echo \"TODO COVERAGE/TEST\"",
+    "ci": "npm-run-all clean lint build && echo \"TODO COVERAGE/TEST\"",
     "clean": "rimraf ./dist",
     "lint": "eslint . --ext=vue,ts --max-warnings=0 --ignore-path=../../.gitignore",
+    "backend:mock": "node local-dev/mock-fs-backend.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit"
