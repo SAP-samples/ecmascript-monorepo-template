@@ -1,0 +1,33 @@
+{
+  "name": "@ecmascript_mono_repo_template/npm_package_typescript_library",
+  "version": "0.1.0",
+  "description": "Opinionated example for a TypeScript library as part of a mono repo",
+  "keywords": [
+    "monorepo",
+    "typescript"
+  ],
+  "main": "lib/src/api.js",
+  "repository": "https://github.com/sap-samples/ecmascript_mono_repo_template/",
+  "license": "CC-BY-4.0",
+  "typings": "./api.d.ts",
+  "files": [
+    "lib",
+    "src",
+    ".reuse",
+    "LICENSES",
+    "api.d.ts"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "ci": "npm-run-all clean lint compile coverage",
+    "clean": "rimraf ./coverage ./nyc_output",
+    "lint": "eslint . --max-warnings=0 --ignore-path=../../.gitignore",
+    "compile": "tsc",
+    "test": "mocha ",
+    "coverage": "nyc mocha"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

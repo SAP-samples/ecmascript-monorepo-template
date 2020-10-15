@@ -1,0 +1,32 @@
+{
+  "name": "@ecmascript_mono_repo_template/npm_package_javascript_library",
+  "version": "0.1.0",
+  "description": "Opinionated example for a pure JavaScript library as part of a mono repo",
+  "keywords": [
+    "monorepo",
+    "typechecking"
+  ],
+  "main": "lib/api.js",
+  "repository": "https://github.com/sap-samples/ecmascript_mono_repo_template/",
+  "license": "CC-BY-4.0",
+  "typings": "./api.d.ts",
+  "files": [
+    "lib",
+    ".reuse",
+    "LICENSES",
+    "api.d.ts"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "ci": "npm-run-all clean lint type-check coverage",
+    "clean": "rimraf ./coverage ./nyc_output",
+    "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --max-warnings=0 --ignore-path=../../.gitignore",
+    "type-check": "tsc",
+    "test": "mocha ",
+    "coverage": "nyc mocha"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

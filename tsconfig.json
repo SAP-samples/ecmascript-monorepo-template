@@ -1,0 +1,20 @@
+{
+  "references": [
+    {
+      "path": "./packages/npm_package_javascript_library"
+    },
+    {
+      "path": "./packages/npm_package_typescript_library"
+    },
+    {
+      "path": "./packages/vscode_custom_editor_ext"
+    },
+    {
+      "path": "./packages/vscode_custom_editor_vue_frontend"
+    },
+    {
+      "path": "./packages/vscode_simple_ext"
+    }
+  ],
+  "include": ["src/**/*"]
+}
