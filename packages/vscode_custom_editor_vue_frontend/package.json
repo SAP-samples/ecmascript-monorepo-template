@@ -1,30 +1,28 @@
 {
-  "name": "vscode_custom_editor_vue_frontend",
+  "name": "@ecmascript_monorepo_template/vscode_custom_editor_vue_frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "ci": "npm-run-all clean lint build && echo \"TODO COVERAGE/TEST\"",
-    "clean": "rimraf ./dist",
-    "lint": "eslint . --ext=vue,ts --max-warnings=0 --ignore-path=../../.gitignore",
-    "backend:mock": "node local-dev/mock-fs-backend.js",
+    "ci": "npm-run-all clean lint build test:unit",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --ext=vue,js --max-warnings=0 --ignore-path=../../.gitignore",
+    "backend:mock": "node local-dev/mock-fs-backend.js",
+    "clean": "rimraf ./dist"
   },
   "dependencies": {
-    "vue": "^3.0.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
     "@sap-devx/webview-rpc": "^0.2.3"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^5.2.4",
-    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-unit-mocha": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/test-utils": "^2.0.0-0",
+    "@vue/test-utils": "^1.0.3",
+    "vue-template-compiler": "^2.6.11",
     "eslint-plugin-vue": "^7.0.1",
-    "chai": "^4.1.2",
     "ws": "^7.3.1"
   }
 }

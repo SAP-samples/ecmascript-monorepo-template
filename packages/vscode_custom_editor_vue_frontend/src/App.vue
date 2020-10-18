@@ -1,18 +1,19 @@
 <template>
-  <img alt="Vue logo" height="350" src="./assets/kitty.jpg"/>
-  <PersonForm />
+  <div>
+    <img alt="Vue logo" height="350" src="./assets/kitty.jpg"/>
+    <PersonForm />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script >
 import PersonForm from './components/person-form.vue';
 
-export default defineComponent({
+export default {
   name: 'App',
   components: {
     PersonForm
   }
-});
+};
 </script>
 
 <style>
@@ -20,7 +21,7 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }

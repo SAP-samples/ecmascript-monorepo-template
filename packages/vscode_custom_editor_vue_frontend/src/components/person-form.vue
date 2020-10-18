@@ -43,30 +43,17 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 
-import { defineComponent } from 'vue';
-// @ts-expect-error
 import { RpcBrowser } from "@sap-devx/webview-rpc/out.browser/rpc-browser";
-// @ts-expect-error
 import { RpcBrowserWebSockets } from "@sap-devx/webview-rpc/out.browser/rpc-browser-ws";
-import { IRpc } from "@sap-devx/webview-rpc/out.ext/rpc-common"
 
-type PersonDetails = {
-  firstName: string,
-  lastName: string,
-  country: string,
-  city: string,
-}
+let rpc
 
-let rpc:IRpc
-
-export default defineComponent({
-  name: "app",
-  data():PersonDetails & {rpc: IRpc} {
+export default {
+  name: "PersonForm",
+  data() {
     return {
-      // @ts-expect-error
-      rpc: null,
       firstName: "",
       lastName: "",
       country: "",
@@ -80,43 +67,41 @@ export default defineComponent({
 
   methods: {
     setupRpc() {
-      // @ts-expect-error
       if (typeof window["acquireVsCodeApi"] !== "undefined") {
-        // @ts-expect-error
         // eslint-disable-next-line
+        // TODO: comment `acquireVsCodeApi` can only be called once.
         window.vscode = acquireVsCodeApi();
-        // @ts-expect-error
-        this.rpc = new RpcBrowser(window, window.vscode);
+        // TODO: why does this constructor needs to be passed the window object?
+        rpc = new RpcBrowser(window, window.vscode);
       } else {
         const ws = new WebSocket("ws://127.0.0.1:8081");
         ws.onopen = async () => {
-          this.rpc = new RpcBrowserWebSockets(ws);
+          rpc = new RpcBrowserWebSockets(ws);
           const apiFunctions = [
             "updateData",
           ];
           for (const methodName of apiFunctions) {
-            this.rpc.registerMethod({
-              // @ts-expect-error
+            rpc.registerMethod({
               func: this[methodName],
               thisArg: this,
               name: methodName
             });
           }
 
-          const initialData = await this.rpc.invoke("onFrontendReady", []);
-          await this.updateData(initialData as unknown as PersonDetails);
+          const initialData = await rpc.invoke("onFrontendReady", []);
+          await this.updateData(initialData);
         };
       }
     },
 
-    async updateData(newData:PersonDetails):Promise<void> {
+    async updateData(newData) {
       this.firstName = newData.firstName;
       this.lastName = newData.lastName
       this.country = newData.country
       this.city = newData.city
     },
 
-    saveDoc():void {
+    saveDoc() {
       const dataObj = {
         firstName: this.firstName,
         lastName: this.lastName,
@@ -124,8 +109,8 @@ export default defineComponent({
         city: this.city,
       }
       console.log(JSON.stringify(dataObj, null, 2));
-      this.rpc.invoke("save", [dataObj])
-    },
-  },
-});
+      rpc.invoke("save", [dataObj])
+    }
+  }
+}
 </script>

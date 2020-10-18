@@ -1,4 +1,4 @@
-# scode_custom_editor_vue_frontend
+# vue2_hello_world
 
 ## Project setup
 

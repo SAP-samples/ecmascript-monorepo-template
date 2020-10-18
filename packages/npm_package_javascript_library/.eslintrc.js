@@ -1,5 +1,5 @@
 /**
- * A new eslint configuration is need for this sub-package as the common config at the
+ * A different eslint configuration is need for this sub-package as the common config at the
  * root of the mono-repo is only suitable for TypeScript sources.
  */
 module.exports = {
