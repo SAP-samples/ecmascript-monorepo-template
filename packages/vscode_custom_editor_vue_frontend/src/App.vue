@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script >
+<script>
 import PersonForm from './components/person-form.vue';
 
 export default {

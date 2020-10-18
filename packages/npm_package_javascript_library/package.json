@@ -23,7 +23,7 @@
     "clean": "rimraf ./coverage ./nyc_output",
     "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --max-warnings=0 --ignore-path=../../.gitignore",
     "type-check": "tsc",
-    "test": "mocha ",
+    "test": "mocha",
     "coverage": "nyc mocha"
   },
   "publishConfig": {
