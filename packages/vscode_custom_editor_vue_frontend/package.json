@@ -1,12 +1,16 @@
 {
   "name": "@ecmascript_monorepo_template/vscode_custom_editor_vue_frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": ">= 10.9.0"
+  },
   "private": true,
   "scripts": {
-    "ci": "npm-run-all clean lint build test:unit",
+    "ci": "npm-run-all clean lint build coverage",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit ./test/**/*spec.js",
+    "coverage": "nyc vue-cli-service test:unit ./test/**/*spec.js",
     "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --ext=vue,js --max-warnings=0 --ignore-path=../../.gitignore",
     "backend:mock": "node local-dev/mock-fs-backend.js",
     "clean": "rimraf ./dist"
@@ -22,7 +26,11 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
     "vue-template-compiler": "^2.6.11",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "eslint-plugin-vue": "^7.0.1",
-    "ws": "^7.3.1"
+    "ws": "^7.3.1",
+    "get-port": "^5.1.1",
+    "lodash": "^4.17.20",
+    "p-defer": "^3.0.0"
   }
 }

@@ -64,9 +64,6 @@ package-lock.json
 # npm registry configuraiton
 .npmrc
 
-# Compiled source code
-lib
-
 # tsc incremental build artifacts
 tsconfig.tsbuildinfo
 
