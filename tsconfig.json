@@ -10,9 +10,6 @@
       "path": "./packages/vscode_custom_editor_ext"
     },
     {
-      "path": "./packages/vscode_custom_editor_vue_frontend"
-    },
-    {
       "path": "./packages/vscode_simple_ext"
     }
   ],
