@@ -67,7 +67,7 @@ export default {
       this.setupVSCodeRpc();
     }
     // istanbul ignore if - None Productive local-dev only flow.
-    if (location.search.includes("localdev")) {
+    if (location.port === "8090") {
       // Local Development Flow
       // Assumes a WS server is already up and waiting.
       this.setupWsRPC(8081);
