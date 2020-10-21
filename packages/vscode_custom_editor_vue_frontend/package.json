@@ -12,7 +12,7 @@
     "test": "vue-cli-service test:unit ./test/**/*spec.js",
     "coverage": "nyc vue-cli-service test:unit ./test/**/*spec.js",
     "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --ext=vue,js --max-warnings=0 --ignore-path=../../.gitignore",
-    "backend:mock": "node local-dev/mock-fs-backend.js",
+    "backend:mock": "node local-dev/fs-backend-mock.js",
     "clean": "rimraf ./dist"
   },
   "dependencies": {
