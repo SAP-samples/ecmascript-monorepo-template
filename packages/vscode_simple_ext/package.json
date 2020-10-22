@@ -2,7 +2,6 @@
   "name": "vscode-simple-ext",
   "displayName": "VSCode Simple Extension",
   "private": true,
-  "description": "Simple VSCode Extension as part of a mono-repo ",
   "version": "0.1.0",
   "publisher": "SAPOSS",
   "icon": "resources/icon/icon.png",
@@ -19,9 +18,8 @@
     "vscode": "^1.49.0"
   },
   "scripts": {
-    "ci": "npm-run-all clean lint compile bundle package",
-    "clean": "rimraf ./dist ./lib *.vsix",
-    "lint": "eslint . --ext .ts --max-warnings=0 --ignore-path=../../.gitignore",
+    "ci": "npm-run-all clean compile bundle package",
+    "clean": "rimraf ./dist *.vsix",
     "compile": "tsc",
     "bundle": "webpack --mode production",
     "package": "vsce package --yarn"

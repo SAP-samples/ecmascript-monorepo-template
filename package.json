@@ -10,13 +10,14 @@
     "postinstall": "patch-package",
     "release:version": "lerna version && yarn run cirlce:release",
     "release:publish": "lerna publish from-git --yes",
-    "ci": "npm-run-all format:validate legal:* ci:subpackages coverage:merge",
+    "ci": "npm-run-all format:validate lint:validate legal:* ci:subpackages coverage:merge",
     "ci:subpackages": "lerna run ci",
     "compile": "lerna run clean && tsc --build",
     "compile:watch": "lerna run clean && tsc --build --watch",
-    "format:fix": "prettier --write \"**/*.@(js|ts|json|md)\" --ignore-path=.gitignore",
-    "format:validate": "prettier --check \"**/*.@(js|ts|json|md)\" --ignore-path=.gitignore",
-    "lint": "eslint . --ext .ts --fix --max-warnings=0 --ignore-path=.gitignore",
+    "format:fix": "prettier --write \"**/*.@(js|ts|json|md|vue)\" --ignore-path=.gitignore",
+    "format:validate": "prettier --check \"**/*.@(js|ts|json|md|vue)\" --ignore-path=.gitignore",
+    "lint:fix": "eslint . --ext=js,ts,vue --fix --max-warnings=0 --ignore-path=.gitignore",
+    "lint:validate": "eslint . --ext=js,ts,vue --max-warnings=0 --ignore-path=.gitignore",
     "coverage:merge": "node ./scripts/merge-coverage",
     "legal:delete": "lerna exec \"shx rm -rf .reuse LICENSES\" || true",
     "legal:copy": "lerna exec \"shx cp -r ../../.reuse .reuse && shx cp -r ../../LICENSES LICENSES\""
@@ -47,7 +48,9 @@
     "webpack-cli": "3.3.12",
     "coveralls": "3.1.0",
     "shx": "0.3.2",
-    "patch-package": "^6.2.2"
+    "patch-package": "^6.2.2",
+    "make-dir": "^3.1.0",
+    "glob": "^7.1.6"
   },
   "husky": {
     "hooks": {
@@ -56,10 +59,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,md,json}": [
+    "*.{js,ts,json,md,vue}": [
       "prettier --write"
     ],
-    "*.{ts.vue}": [
+    "*.{ts,js,vue}": [
       "eslint --fix --max-warnings=0"
     ]
   },
