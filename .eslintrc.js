@@ -19,10 +19,12 @@ module.exports = {
   },
   overrides: [
     {
+      // For pure-java script sub-packages and general scripts (in any package).
       files: ["*.js"],
     },
     {
       // TODO: does this also  scan d.ts files?
+      // For sub-packages using TypeScript (libraries/VSCode Exts).
       files: ["*.ts"],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",
@@ -51,6 +53,7 @@ module.exports = {
       },
     },
     {
+      // For Vue frontend sub-packages.
       files: ["*.vue"],
       parser: "vue-eslint-parser",
       // Using the smaller vue rule subset (essential) to avoid including formatting rules
