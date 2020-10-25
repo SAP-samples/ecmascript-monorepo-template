@@ -1,3 +1,10 @@
+[![CircleCI](https://circleci.com/gh/SAP-Samples/ecmascript-monorepo-template.svg?style=svg)](https://circleci.com/gh/SAP-Samples/ecmascript-monorepo-template)
+[![Coverage Status](https://coveralls.io/repos/github/SAP-Samples/ecmascript-monorepo-template/badge.svg?branch=main)](https://coveralls.io/github/SAP-Samples/ecmascript-monorepo-template?branch=main)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![DependentBot](https://api.dependabot.com/badges/status?host=github&repo=SAP-Samples/ecmascript-monorepo-template)](https://dependabot.com/)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-Samples/ecmascript-monorepo-template)](https://api.reuse.software/info/github.com/SAP-Samples/ecmascript-monorepo-template)
+
 # ECMAScript Monorepo Template
 
 ## Description
