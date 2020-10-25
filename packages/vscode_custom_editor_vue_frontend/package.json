@@ -6,14 +6,13 @@
   },
   "private": true,
   "scripts": {
-    "ci": "npm-run-all clean lint build coverage",
-    "serve": "vue-cli-service serve --port=8090",
+    "ci": "npm-run-all clean build coverage",
+    "clean": "rimraf ./dist ./coverage",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test:unit ./test/**/*spec.js",
     "coverage": "nyc vue-cli-service test:unit ./test/**/*spec.js",
-    "lint": "eslint . -c ./.eslintrc.js --no-eslintrc --ext=vue,js --max-warnings=0 --ignore-path=../../.gitignore",
-    "backend:mock": "node local-dev/fs-backend-mock.js",
-    "clean": "rimraf ./dist"
+    "serve": "vue-cli-service serve --port=8090",
+    "backend:mock": "node local-dev/fs-backend-mock.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

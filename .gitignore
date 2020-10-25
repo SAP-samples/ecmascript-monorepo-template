@@ -70,5 +70,5 @@ tsconfig.tsbuildinfo
 # Built VSCode exts
 *.vsix
 
-# avoid prettier trying to format bundled artifacts
+# generated artifacts
 dist

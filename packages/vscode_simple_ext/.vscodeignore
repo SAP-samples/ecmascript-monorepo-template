@@ -4,6 +4,6 @@ node_modules
 # The VSCode Extension's dev artifacts
 coverage/**
 .nyc_output/**
-lib/test/**
+dist/test/**
 test/**
 scripts

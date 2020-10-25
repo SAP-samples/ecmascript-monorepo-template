@@ -1,18 +1,18 @@
 <template>
   <div>
-    <img alt="Vue logo" height="350" src="./assets/kitty.jpg"/>
+    <img alt="Vue logo" height="350" src="./assets/kitty.jpg" />
     <PersonForm />
   </div>
 </template>
 
 <script>
-import PersonForm from './components/person-form.vue';
+import PersonForm from "./components/person-form.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    PersonForm
-  }
+    PersonForm,
+  },
 };
 </script>
 
