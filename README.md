@@ -26,14 +26,18 @@ The consumption process is currently a **manual** step by step guide.
    - Note that some sub-packages depend on other sub-packages.
 1. Change the `name` fields of the remaining `packages/*/package.json` files to fit your new project.
 
+1. Delete the **contents** of the README.md files in both the root and the sub-packages.
+
 1. Reset the `version` field in the [lerna.json](./lerna.json) to your project's **initial** version number.
 
    - Normally `0.1.0` or `0.0.1`.
 
 1. Adjust **coverage thresholds** in the [nyc.config.js](./nyc.config.js).
    - By default, these are set to **100%**.
+1. Adjust [CONTRIBUTING.md code coverage section](./CONTRIBUTING.md#code-coverage).
+   - To align with the **coverage thresholds** defined in the [nyc.config.js](./nyc.config.js).
+   - Modify the `cla-assistant` link in the [CONTRIBUTING.md legal section](./CONTRIBUTING.md#legal).
 1. Update the Legal Related files (copyrights/notices/disclaimer).
-
    - [./.reuse/dep5](./.reuse/dep5)
    - [./LICENSES](./LICENSES)
    - [./LICENSE](./LICENSE)
@@ -45,6 +49,13 @@ The consumption process is currently a **manual** step by step guide.
 1. If you kept VSCode extension templates, also adjust the `displayName` and `publisher` fields
    in their `package.json` files to fit your new project.
 1. If you have not kept any VSCode extensions in your monorepo, remove the [root vscode webpack config](./webpack.config.vscode.base.js).
+
+1. Adjust the [circle-ci config.yml](./.circleci/config.yml).
+   There are three possible sections that may need to be removed (and their references):
+
+   - `deploy-npm` --> if your project should not deploy any npm library to npmjs.com.
+   - `prepare-vsix` and `deploy-gh-releases` --> if your project does not include VSCode extensions.
+
 1. Adjust the [.eslintrc.js](./.eslintrc.js) configuration.
 
    - Remove `overrides` sections for no longer relevant file types:
@@ -55,12 +66,14 @@ The consumption process is currently a **manual** step by step guide.
      - `eslint-plugin-vue` --> if your monorepo does not contain any vue frontend projects.
 
 1. Adjust root TypeScript configurations.
+
    - Remove sub-project references that no longer exist from [root ./tsconfig.json](./tsconfig.json).
    - If there are no references left in this file, and you do not plan on adding TypeScript projects
      to your monorepo:
      - Delete the [root ./tsconfig.json](./tsconfig.json).
      - Delete the [root ./tsconfig.base.json](./tsconfig.base.json).
      - Remove the `compile` and `compile:watch` scripts from the [root package.json](./packages).
+
 1. Adjust lint-staged configurations.
    - Look for the `lint-staged` field and its keys in the [root package.json](./package.json).
    - Remove file patterns that your repo no longer contains (or is expected to contain).
@@ -81,7 +94,7 @@ Please open an [issue](https://github.com/SAP-samples/ecmascript-monorepo-templa
 
 ## Contributing
 
-Contributions are very welcome.
+Contributions are most welcome.
 Please see the [Templates Contributing Guide](TBD).
 
 ## License

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "postinstall": "patch-package",
-    "release:version": "lerna version && yarn run cirlce:release",
+    "release:version": "lerna version",
     "release:publish": "lerna publish from-git --yes",
     "ci": "npm-run-all format:validate lint:validate legal:* ci:subpackages coverage:merge",
     "ci:subpackages": "lerna run ci",
