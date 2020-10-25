@@ -11,7 +11,7 @@ best practices in different ECMAScript related technology / scenario.
 ## Requirements
 
 - [Yarn 1](https://classic.yarnpkg.com/lang/en/)
-- [an LTS of node.js](https://nodejs.org/en/about/releases/)
+- [A Long Term Support version of node.js](https://nodejs.org/en/about/releases/)
 
 ## How to use this repository
 
