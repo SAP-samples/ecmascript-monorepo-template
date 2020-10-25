@@ -11,7 +11,7 @@ const pkgJsonOrgStr = readFileSync(pkgJsonPath, "utf8");
 const pkgJson = JSON.parse(pkgJsonOrgStr);
 // During development flows the `main` should point to the compiled sourced
 // for fast dev feedback loops.
-expect(pkgJson.main).to.equal("./lib/src/extension");
+expect(pkgJson.main).to.equal("./dist/src/extension");
 // During production flows the main should point to the bundled sources
 // to reduce loading time.
 pkgJson.main = "./dist/extension";

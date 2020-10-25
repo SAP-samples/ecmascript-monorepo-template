@@ -16,7 +16,7 @@
   "devDependencies": {},
   "scripts": {
     "ci": "npm-run-all clean compile coverage",
-    "clean": "rimraf ./coverage ./nyc_output",
+    "clean": "rimraf ./coverage ./nyc_output ./dist",
     "compile": "tsc",
     "test": "mocha ",
     "coverage": "nyc mocha"

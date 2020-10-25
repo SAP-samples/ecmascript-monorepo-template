@@ -38,12 +38,6 @@ The consumption process is currently a **manual** step by step guide.
    - [./LICENSES](./LICENSES)
    - [./LICENSE](./LICENSE)
 
-1. Remove unneeded configuration files / sections.
-   - [.eslintrc.js](.eslintrc.js)
-   - [.mocharc.js](.mocharc.js)
-   - [.eslintrc.js](.eslintrc.js)
-   - [.eslintrc.js](.eslintrc.js)
-
 [download]: https://github.com/SAP-samples/ecmascript-monorepo-template/archive/main.zip
 
 ### Modifications dependent on selected sub-packages.

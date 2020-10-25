@@ -8,7 +8,7 @@
   "keywords": [],
   "categories": [],
   "license": "Apache-2.0",
-  "main": "./lib/src/extension",
+  "main": "./dist/src/extension",
   "activationEvents": [
     "*"
   ],
@@ -22,7 +22,7 @@
     "clean": "rimraf ./dist *.vsix",
     "compile": "tsc",
     "bundle": "webpack --mode production",
-    "package": "vsce package --yarn"
+    "package": "node ./scripts/package-vsix.js"
   },
   "dependencies": {
     "@ecmascript_monorepo_template/npm_package_javascript_library": "0.1.0",
