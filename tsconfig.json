@@ -7,9 +7,6 @@
       "path": "./packages/npm_package_typescript_library"
     },
     {
-      "path": "./packages/vscode_custom_editor_ext"
-    },
-    {
       "path": "./packages/vscode_simple_ext"
     }
   ],

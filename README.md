@@ -8,6 +8,13 @@ and best practices for ECMAScript eco-system technologies and projects.
 This repo contains several [sub-packages](./packages) each demonstrating
 best practices in different ECMAScript related technology / scenario.
 
+## Sub-packages
+
+- [NPM JavaScript Library](./packages/npm_package_javascript_library)
+- [NPM TypeScript Library](./packages/npm_package_typescript_library)
+- [VSCode Simple Extension](./packages/vscode_simple_ext)
+- [Vue Frontend with RPC calls](./packages/vue_frontend_rpc)
+
 ## Requirements
 
 - [Yarn 1](https://classic.yarnpkg.com/lang/en/)
