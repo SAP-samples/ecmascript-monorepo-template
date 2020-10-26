@@ -2,7 +2,7 @@ const path = require("path");
 
 const config = {
   optimization: {
-    // The Default minimization options cause JavaScript runtime errors.
+    // The Default minimization options can sometimes cause JavaScript runtime errors.
     // Also we don't actually need to minimize as much (not targeted for browser).
     // Rather we mostly need to reduce the number of fileSystem access requests
     // by reducing the number of files packaged inside our VSCode extensions
