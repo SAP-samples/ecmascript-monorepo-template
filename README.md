@@ -109,7 +109,12 @@ Please open an [issue](https://github.com/SAP-samples/ecmascript-monorepo-templa
 ## Contributing
 
 Contributions are most welcome.
-Please see the [Templates Contributing Guide](TBD).
+
+- Please see the [Contributing Guide](./CONTRIBUTING.md) for docs about development flows.
+- Before implementing a major contribution please open an issue to discuss your contribution first.
+- Last but not least, please consider how your changes would affect **both** the:
+  - Root level dev flows (e.g needed adjustment for linting/formatting).
+  - Root level [usage/consumption instructions](./README.md#how-to-use-this-repository).
 
 ## License
 
