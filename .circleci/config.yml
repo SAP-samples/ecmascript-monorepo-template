@@ -104,10 +104,10 @@ workflows:
   version: 2
   voter:
     jobs:
-#      - build-node10
-#      - build-node12
+      - build-node10
+      - build-node12
       - build-node14
-#      - compliance
+      - compliance
   release:
     jobs:
       - deploy-npm:
