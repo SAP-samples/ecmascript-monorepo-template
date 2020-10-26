@@ -7,4 +7,6 @@ module.exports = {
   lines: 100,
   functions: 100,
   statements: 100,
+  // To enable **merged** coverage report all relevant file extensions must be listed.
+  extension: [".js", ".ts", ".vue"],
 };
