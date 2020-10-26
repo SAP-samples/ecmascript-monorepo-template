@@ -17,11 +17,11 @@ jobs:
       - run:
           name: Lint commit message
           command: echo "$COMMIT_MESSAGE" | npx commitlint
-#      - run:
-#          command: cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
-#          environment:
-#            COVERALLS_SERVICE_NAME: circle-ci
-#            COVERALLS_GIT_BRANCH: ${CIRCLE_BRANCH}
+      - run:
+          command: cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+          environment:
+            COVERALLS_SERVICE_NAME: circle-ci
+            COVERALLS_GIT_BRANCH: ${CIRCLE_BRANCH}
 
   build-node12:
     docker:
