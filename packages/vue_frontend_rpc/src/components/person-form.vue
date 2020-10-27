@@ -77,9 +77,9 @@ export default {
   methods: {
     // we cannot test VSCode related flow without VSCode.
     setupVSCodeRpc: /* istanbul ignore next  */ function () {
-      // TODO: comment `acquireVsCodeApi` can only be called once.
+      // `acquireVsCodeApi()` can only be invoked once, so we are "saving" it's result
+      // on the `window` object in case we will need it again.
       window.vscode = acquireVsCodeApi();
-      // TODO: why does this constructor needs to be passed the window object?
       rpc = new RpcBrowser(window, window.vscode);
     },
 

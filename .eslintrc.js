@@ -2,9 +2,8 @@ module.exports = {
   // Common settings for JS Files.
   extends: [
     "eslint:recommended",
-    // TODO: inspect: https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/require-description.html usage.
     "plugin:eslint-comments/recommended",
-    // Disables all formatting related rules as formatting is handled by prettier.
+    // Disables all formatting related rules as formatting is handled by prettier, not eslint.
     "prettier",
   ],
   parserOptions: {
@@ -17,14 +16,16 @@ module.exports = {
     mocha: true,
     node: true,
   },
+  rules: {
+    "eslint-comments/require-description": ["error", { ignore: [] }],
+  },
   overrides: [
     {
       // For pure-java script sub-packages and general scripts (in any package).
       files: ["*.js"],
     },
     {
-      // TODO: does this also  scan d.ts files?
-      // For sub-packages using TypeScript (libraries/VSCode Exts).
+      // For sub-packages using TypeScript (libraries/VSCode Exts) && TypeScript definitions (d.ts)
       files: ["*.ts"],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",

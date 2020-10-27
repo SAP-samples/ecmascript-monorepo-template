@@ -6,6 +6,10 @@ const editorFilePath = resolve(__dirname, "./person-details.json");
 const editorFileText = readFileSync(editorFilePath, "utf-8");
 let editorFileObject = JSON.parse(editorFileText);
 
+/**
+ * Websocket Backend mock using a real file (`./person-details.json`)
+ * This is used as a playground during local development to enable fast feedback loops.
+ */
 new BackendMock({
   onFrontendReady: async () => {
     return editorFileObject;

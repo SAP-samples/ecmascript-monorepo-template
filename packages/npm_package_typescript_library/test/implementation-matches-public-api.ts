@@ -8,13 +8,13 @@ type AssertIsSubSet<SUBSET extends SUPERSET, SUPERSET> = [SUBSET, SUPERSET];
 // We can perform logical assertions on the API vs Impel
 // using discrete math semantics (subsets/supersets)
 // See: https://www.typescriptlang.org/docs/handbook/type-compatibility.html
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- the definition is also the usage
 type EnsureAllDeclaredAreExposedAtRuntime = AssertIsSubSet<
   typeof implementation,
   typeof publicApi
 >;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- the definition is also the usage
 type EnsureNoRedundantAreExposedAtRuntime = AssertIsSubSet<
   typeof publicApi,
   typeof implementation

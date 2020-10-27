@@ -6,6 +6,13 @@ const {
 
 const ASYNC_NOOP = async () => {};
 
+/**
+ * A Backend mock using WebSockets.
+ * Note that this class does not include the RPC end points logic.
+ * Those can be passed via the constructors `opts` to implement different types of backend mocks, e.g:
+ * - In Memory mock for testing.
+ * - Mock using a real (hard-coded path) file for local "playground".
+ */
 class BackendMock {
   /**
    * @param [opts] {object}

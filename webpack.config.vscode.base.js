@@ -11,7 +11,7 @@ const config = {
   target: "node",
   devtool: "source-map",
   resolve: {
-    // Solution for sibling package resolution inside mono-repo
+    // Solution for sibling package resolution inside a monorepo
     modules: [
       path.resolve(__dirname, "node_modules"),
       path.resolve(__dirname, "../node_modules"),

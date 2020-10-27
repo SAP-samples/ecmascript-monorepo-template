@@ -73,7 +73,7 @@ The consumption process is currently a **manual** step by step guide.
 1. Adjust the [.eslintrc.js](./.eslintrc.js) configuration.
 
    - Remove `overrides` sections for no longer relevant file types:
-     - `["*.ts"]` --> if your monorepo does not contain any TypeScript projects.
+     - `["*.ts"]` --> if your monorepo does not contain any TypeScript sources (including `.d.ts` files).
      - `["*.vue"]` --> if your monorepo does not contain any vue frontend projects.
    - Remove `dev-depedencies` from the [root package.json](./package.json)
      - `@typescript-eslint/*` --> if your monorepo does not contain any TypeScript projects.

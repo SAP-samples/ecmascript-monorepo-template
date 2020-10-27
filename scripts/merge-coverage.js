@@ -1,5 +1,7 @@
 /**
- * based on https://github.com/istanbuljs/istanbuljs/blob/1fe490e51909607137ded25b1688581c9fd926cd/monorepo-merge-reports.js
+ * This script will create a **merged** coverage reports from all sub-packages.
+ * This report will can be found at the root `coverage` dir and will also be uploaded to coveralls.io
+ * - based on https://github.com/istanbuljs/istanbuljs/blob/1fe490e51909607137ded25b1688581c9fd926cd/monorepo-merge-reports.js
  */
 const { dirname, basename, join, resolve } = require("path");
 const { spawnSync } = require("child_process");
@@ -35,6 +37,7 @@ glob.sync("packages/*/.nyc_output").forEach((nycOutput) => {
   }
 });
 
+// Create merged report
 const { status, stderr } = spawnSync(
   resolve("node_modules", ".bin", "nyc"),
   ["report", "--reporter=lcov"],

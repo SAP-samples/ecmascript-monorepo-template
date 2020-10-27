@@ -9,6 +9,10 @@ describe("The Person Form", () => {
   describe("saving new data flow", () => {
     let backendMock;
     let port;
+    // Our backend and frontend both run under the same node.js process in this test.
+    // However as they communicate with RPC over websockets they don't share the same "promise chains".
+    // We use a deferred promise to resolve async waiting during the tests.
+    // Other approaches are documented here: https://vue-test-utils.vuejs.org/guides/#testing-asynchronous-behavior
     let saveDeferred = pDefer();
 
     before(async () => {
@@ -52,6 +56,9 @@ describe("The Person Form", () => {
       await countryInput.setValue("SadLand");
       const saveButton = wrapper.find("#saveButton");
       saveButton.trigger("click");
+      //   Inspect the backend successfully received the expected data on `save` rpc call.
+      // - Note this is an (almost) productive functional flow, not a pure unit test.
+      //   We have a real frontend and backend communicating with RPC over a websocket.
       await saveDeferred.promise;
     });
 

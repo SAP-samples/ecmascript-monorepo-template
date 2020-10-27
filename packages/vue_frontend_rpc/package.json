@@ -12,7 +12,7 @@
     "test": "vue-cli-service test:unit ./test/**/*spec.js",
     "coverage": "nyc vue-cli-service test:unit ./test/**/*spec.js",
     "serve": "vue-cli-service serve --port=8090",
-    "backend:mock": "node local-dev/fs-backend-mock.js"
+    "backend:mock": "node local-dev/run-fs-backend-mock.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

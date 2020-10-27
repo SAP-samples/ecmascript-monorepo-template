@@ -1,4 +1,5 @@
 import { window } from "vscode";
+// Using **sibling** libraries from our monorepo.
 import { multiply } from "@ecmascript_monorepo_template/npm_package_javascript_library";
 import { add } from "@ecmascript_monorepo_template/npm_package_typescript_library";
 

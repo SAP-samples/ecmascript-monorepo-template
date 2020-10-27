@@ -12,6 +12,7 @@ describe("The Person Form", () => {
 
     before(async () => {
       port = await getPort({ port: getPort.makeRange(9000, 10000) });
+      // Start an in-memory websocket backend mock for this test.
       backendMock = new BackendMock({
         port: port,
         onFrontendReady: async () => {
@@ -32,6 +33,10 @@ describe("The Person Form", () => {
       // - Enable awaiting for the initialization logic as it seems
       //   we cannot "await" for Vue life-cycle methods (e.g created) in tests.
       await wrapper.vm.setupWsRPC(port);
+
+      // Inspect the frontend successfully invoked `onFrontendReady` and received the expected data back.
+      // - Note this is an (almost) productive functional flow, not a pure unit test.
+      //   We have a real frontend and backend communicating with RPC over a websocket.
       const firstNameInput = wrapper.find("#firstName");
       expect(firstNameInput.element.value).to.eql("Jane");
       const lastNameInput = wrapper.find("#lastName");
