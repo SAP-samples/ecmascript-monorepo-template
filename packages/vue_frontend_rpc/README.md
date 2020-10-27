@@ -1,29 +1,9 @@
-# vue2_hello_world
+# VSCode Simple Extension
 
-## Project setup
+This sub-package demonstrates a Vuejs frontend application using [RPC](https://de.wikipedia.org/wiki/Remote_Procedure_Call) to communicate with a backend.
 
-```
-yarn install
-```
+## Highlights
 
-### Compiles and hot-reloads for development
-
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-
-```
-yarn build
-```
-
-### Run your unit tests
-
-```
-yarn test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Local Development Playground](./CONTRIBUTING.md#local-development-playground).
+- [Testing and Functional Flows testing](./CONTRIBUTING.md#testing).
+- [Building and Bundling](./CONTRIBUTING.md#building--bundling-the-project).
