@@ -1,3 +1,0 @@
-# `lib` is ignored for most sub-packages as we are using TypeScript
-# However in this sub-package these are the original sources.
-!lib
