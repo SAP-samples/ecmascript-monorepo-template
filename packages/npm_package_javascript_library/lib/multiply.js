@@ -5,6 +5,8 @@ function multiply(x, y) {
   return x * y;
 }
 
+var x = 5;
+
 module.exports = {
   multiply,
 };
