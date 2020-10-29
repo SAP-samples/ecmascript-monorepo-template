@@ -1,5 +1,6 @@
 [![CircleCI](https://circleci.com/gh/SAP-samples/ecmascript-monorepo-template.svg?style=svg)](https://circleci.com/gh/SAP-samples/ecmascript-monorepo-template)
 [![Coverage Status](https://coveralls.io/repos/github/SAP-samples/ecmascript-monorepo-template/badge.svg?branch=main)](https://coveralls.io/github/SAP-samples/ecmascript-monorepo-template?branch=main)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/SAP-samples/ecmascript-monorepo-template.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/SAP-samples/ecmascript-monorepo-template/context:javascript)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![DependentBot](https://api.dependabot.com/badges/status?host=github&repo=SAP-samples/ecmascript-monorepo-template)](https://dependabot.com/)
