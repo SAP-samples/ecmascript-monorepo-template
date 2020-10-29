@@ -78,27 +78,29 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn run ci
+      - run: mkdir -p artifacts && cp packages/*/*.vsix ./vsix
       - persist_to_workspace:
-          root: "./packages"
-          # TODO: may need to copy the VSIX files to a single folder first
+          root: "./artifacts"
           paths:
             # https://golang.org/pkg/path/filepath/#Match
-            - vscode_custom_editor_ext/vscode_custom_editor_ext-*
-            - vscode_simple_ext/vscode_simple_ext-*
+            - "*.vsix"
 
   deploy-gh-releases:
     docker:
       - image: circleci/golang:1.13
     steps:
       - attach_workspace:
-          at: ./dist
-      # TODO: may need to copy the VSIX files to a single folder first
+          at: ./artifacts
+      - run:
+          name: "Inspect Artifacts Folder"
+          working_directory: ./artifacts
+          command: ls -la
       - run:
           name: "Publish Release on GitHub"
           command: |
             go get github.com/tcnksm/ghr
             VERSION=${CIRCLE_TAG}
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./dist/
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
 
 workflows:
   version: 2
