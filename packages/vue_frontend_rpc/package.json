@@ -1,6 +1,6 @@
 {
   "name": "@ecmascript_monorepo_template/vscode_custom_editor_vue_frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "engines": {
     "node": ">= 10.9.0"
   },
@@ -15,20 +15,20 @@
     "backend:mock": "node local-dev/run-fs-backend-mock.js"
   },
   "dependencies": {
+    "@sap-devx/webview-rpc": "^0.2.3",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "@sap-devx/webview-rpc": "^0.2.3"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-unit-mocha": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
-    "vue-template-compiler": "^2.6.11",
-    "istanbul-instrumenter-loader": "^3.0.1",
-    "ws": "^7.3.1",
     "get-port": "^5.1.1",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "lodash": "^4.17.20",
-    "p-defer": "^3.0.0"
+    "p-defer": "^3.0.0",
+    "vue-template-compiler": "^2.6.11",
+    "ws": "^7.3.1"
   }
 }

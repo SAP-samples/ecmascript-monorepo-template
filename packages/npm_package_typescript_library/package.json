@@ -1,6 +1,6 @@
 {
   "name": "@ecmascript_monorepo_template/npm_package_typescript_library",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/src/api.js",
   "repository": "https://github.com/sap-samples/ecmascript_monorepo_template/",
   "license": "Apache-2.0",
@@ -12,8 +12,6 @@
     "LICENSES",
     "api.d.ts"
   ],
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
     "ci": "npm-run-all clean compile coverage",
     "clean": "rimraf ./coverage ./nyc_output ./dist",

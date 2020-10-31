@@ -2,7 +2,7 @@
   "name": "vscode-simple-ext",
   "displayName": "VSCode Simple Extension",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "SAPOSS",
   "icon": "resources/icon/icon.png",
   "keywords": [],
@@ -25,8 +25,8 @@
     "package": "node ./scripts/package-vsix.js"
   },
   "dependencies": {
-    "@ecmascript_monorepo_template/npm_package_javascript_library": "0.1.0",
-    "@ecmascript_monorepo_template/npm_package_typescript_library": "0.1.0"
+    "@ecmascript_monorepo_template/npm_package_javascript_library": "^1.0.0",
+    "@ecmascript_monorepo_template/npm_package_typescript_library": "^1.0.0"
   },
   "devDependencies": {
     "@types/vscode": "1.50.0",
