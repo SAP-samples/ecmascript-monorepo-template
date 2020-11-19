@@ -62,7 +62,7 @@
       "prettier --write"
     ],
     "*.{ts,js,vue}": [
-      "eslint --fix --max-warnings=0"
+      "eslint --fix --max-warnings=0 --ignore-pattern=!.*"
     ]
   },
   "config": {
