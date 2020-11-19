@@ -15,7 +15,7 @@
   "contributes": {},
   "repository": "https://github.com/sap-samples/ecmascript_monorepo_template",
   "engines": {
-    "vscode": "^1.50.0"
+    "vscode": "^1.51.0"
   },
   "scripts": {
     "ci": "npm-run-all clean compile bundle package",
