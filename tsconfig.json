@@ -9,6 +9,5 @@
     {
       "path": "./packages/vscode_simple_ext"
     }
-  ],
-  "include": ["src/**/*"]
+  ]
 }

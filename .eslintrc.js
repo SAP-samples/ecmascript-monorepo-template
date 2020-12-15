@@ -10,6 +10,7 @@ module.exports = {
     // The `ecmaVersion` should align to the supported features of our target runtimes (browsers / nodejs / others)
     // Consult with: https://kangax.github.io/compat-table/es2016plus/
     ecmaVersion: 2017,
+    project: ["./tsconfig.base.json", "./tsconfig.json"],
   },
   env: {
     commonjs: true,
@@ -32,6 +33,7 @@ module.exports = {
       extends: [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       rules: {
         "@typescript-eslint/no-use-before-define": [

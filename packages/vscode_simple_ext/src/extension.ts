@@ -3,6 +3,7 @@ import { window } from "vscode";
 import { multiply } from "@ecmascript_monorepo_template/npm_package_javascript_library";
 import { add } from "@ecmascript_monorepo_template/npm_package_typescript_library";
 
+// eslint-disable-next-line @typescript-eslint/require-await -- the function 'activate' is used by external code (VSCode).
 export async function activate(): Promise<void> {
   const channel = window.createOutputChannel("vscode-simple_ext");
   channel.appendLine("Hello Cruel World");
