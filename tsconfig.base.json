@@ -9,6 +9,5 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true
-  },
-  "include": ["src/**/*", "api.d.ts"]
+  }
 }

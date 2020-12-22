@@ -1,14 +1,10 @@
 {
   "references": [
     {
-      "path": "./packages/npm_package_javascript_library"
-    },
-    {
       "path": "./packages/npm_package_typescript_library"
     },
     {
       "path": "./packages/vscode_simple_ext"
     }
-  ],
-  "include": ["src/**/*"]
+  ]
 }
