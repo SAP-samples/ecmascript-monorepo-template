@@ -1,16 +1,6 @@
 module.exports = {
   // Common settings for JS Files.
-  extends: [
-    "eslint:recommended",
-    "plugin:eslint-comments/recommended",
-    // Disables all formatting related rules as formatting is handled by prettier, not eslint.
-    "prettier",
-  ],
-  parserOptions: {
-    // The `ecmaVersion` should align to the supported features of our target runtimes (browsers / nodejs / others)
-    // Consult with: https://kangax.github.io/compat-table/es2016plus/
-    ecmaVersion: 2017,
-  },
+  extends: ["plugin:eslint-comments/recommended", "prettier"],
   env: {
     commonjs: true,
     mocha: true,
@@ -23,15 +13,24 @@ module.exports = {
     {
       // For pure-java script sub-packages and general scripts (in any package).
       files: ["*.js"],
+      extends: ["eslint:recommended"],
+      parserOptions: {
+        // The `ecmaVersion` should align to the supported features of our target runtimes (browsers / nodejs / others)
+        // Consult with: https://kangax.github.io/compat-table/es2016plus/
+        ecmaVersion: 2017,
+      },
     },
     {
       // For sub-packages using TypeScript (libraries/VSCode Exts) && TypeScript definitions (d.ts)
       files: ["*.ts"],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",
+      parserOptions: {
+        project: ["./tsconfig.base.json", "./tsconfig.json"],
+      },
       extends: [
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       rules: {
         "@typescript-eslint/no-use-before-define": [
