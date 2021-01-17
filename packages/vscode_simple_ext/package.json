@@ -12,21 +12,52 @@
   "activationEvents": [
     "*"
   ],
-  "contributes": {},
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "vscode-simple-ext",
+      "properties": {
+        "vscode-simple-ext.loggingLevel": {
+          "type": "string",
+          "enum": [
+            "off",
+            "fatal",
+            "error",
+            "warn",
+            "info",
+            "debug",
+            "trace"
+          ],
+          "default": "error",
+          "description": "The verbosity of logging. The Order is None < fatal < error < warn < info < debug < trace.",
+          "scope": "window"
+        },
+        "vscode-simple-ext.sourceLocationTracking": {
+          "type": "boolean",
+          "default": false,
+          "description": "Should Source Code Location Info be added to log entries, DANGER - May be very slow, only use in debugging scenarios",
+          "scope": "window"
+        }
+      }
+    }
+  },
   "repository": "https://github.com/sap-samples/ecmascript_monorepo_template",
   "engines": {
     "vscode": "^1.51.0"
   },
   "scripts": {
-    "ci": "npm-run-all clean compile bundle package",
+    "ci": "npm-run-all clean compile test:unit bundle package",
     "clean": "rimraf ./dist *.vsix",
     "compile": "tsc",
+    "test:unit": "mocha",
     "bundle": "webpack --mode production",
     "package": "node ./scripts/package-vsix.js"
   },
   "dependencies": {
     "@ecmascript_monorepo_template/npm_package_javascript_library": "^1.1.0",
-    "@ecmascript_monorepo_template/npm_package_typescript_library": "^1.1.0"
+    "@ecmascript_monorepo_template/npm_package_typescript_library": "^1.1.0",
+    "@vscode-logging/wrapper": "0.2.0",
+    "@vscode-logging/types": "0.1.3"
   },
   "devDependencies": {
     "@types/vscode": "1.51.0",
