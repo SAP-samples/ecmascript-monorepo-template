@@ -1,14 +1,15 @@
 /**
  * This file manages the logger's state.
  */
-import { readFileSync } from "fs";
+import { readFile as readFileCallback } from "fs";
+import { promisify } from "util"
 import { resolve } from "path";
-import { ok } from "assert";
 import { ExtensionContext, window, workspace } from "vscode";
 import { IChildLogger, IVSCodeExtLogger } from "@vscode-logging/types";
 import { configureLogger, NOOP_LOGGER } from "@vscode-logging/wrapper";
 import { LOGGING_LEVEL_PROP, SOURCE_LOCATION_PROP} from "./constants"
 
+const readFile = promisify(readFileCallback);
 // On file load we initialize our logger to `NOOP_LOGGER`
 // this is done because the "real" logger cannot be initialized during file load.
 // only once the `activate` function has been called in extension.ts
@@ -23,9 +24,9 @@ function setLogger(newLogger: IVSCodeExtLogger): void {
   loggerImpel = newLogger;
 }
 
-export function initLogger(context: ExtensionContext): void {
+export async function initLogger(context: ExtensionContext): Promise<void> {
   const meta = JSON.parse(
-    readFileSync(resolve(context.extensionPath, "package.json"), "utf8")
+    await readFile(resolve(context.extensionPath, "package.json"), "utf8")
   );
 
   const extLogger = configureLogger({

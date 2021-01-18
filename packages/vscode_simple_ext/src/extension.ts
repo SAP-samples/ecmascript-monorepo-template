@@ -4,8 +4,8 @@ import { multiply } from "@ecmascript_monorepo_template/npm_package_javascript_l
 import { add } from "@ecmascript_monorepo_template/npm_package_typescript_library";
 import {getLogger, initLogger} from "./logger";
 
-export function activate(context: ExtensionContext): void {
-  initLogger(context);
+export async function activate(context: ExtensionContext): void {
+  await initLogger(context);
   getLogger().info("begin extension activation!");
   try {
     const channel = window.createOutputChannel("vscode-simple_ext");
@@ -15,6 +15,7 @@ export function activate(context: ExtensionContext): void {
   }
   catch (e) {
     getLogger().error("failed extension activation", { err: e})
+    throw e;
   }
   getLogger().info("end extension activation!");
 }
