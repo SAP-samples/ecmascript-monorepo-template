@@ -1,9 +1,23 @@
-# We are bundling our extension so no need to include the dependencies separately.
-node_modules
+# ignore all files:
+**/**
 
-# The VSCode Extension's dev artifacts
-coverage/**
-.nyc_output/**
-dist/test/**
-test/**
-scripts
+# except for:
+
+# Legal Stuff
+!.reuse/
+!LICENSES/
+
+# bundled sources
+!dist/
+
+# runtime artifacts
+!resources/
+
+# the source maps point to src/ dir
+!src/
+!package.json
+
+# Docs
+!README.md
+!CHANGELOG.md
+
