@@ -1,6 +1,6 @@
 {
   "name": "@ecmascript_monorepo_template/npm_package_javascript_library",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lib/api.js",
   "repository": "https://github.com/sap-samples/ecmascript_monorepo_template/",
   "license": "Apache-2.0",
