@@ -3,6 +3,7 @@ import { readFileSync } from "fs";
 import { expect } from "chai";
 import { LOGGING_LEVEL_PROP, SOURCE_LOCATION_PROP } from "../../src/constants";
 
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access -- package.json is untyped */
 describe("The simple VSCode Ext constants", () => {
   context("vscode contribution metadata", () => {
     let meta: Record<string, any>;
@@ -24,3 +25,4 @@ describe("The simple VSCode Ext constants", () => {
     });
   });
 });
+/* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access -- see matching disable comment above*/

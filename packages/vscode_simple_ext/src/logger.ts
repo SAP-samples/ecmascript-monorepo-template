@@ -27,7 +27,7 @@ function setLogger(newLogger: IVSCodeExtLogger): void {
 export async function initLogger(context: ExtensionContext): Promise<void> {
   const meta = JSON.parse(
     await readFile(resolve(context.extensionPath, "package.json"), "utf8")
-  );
+  ) as { displayName: string };
 
   const extLogger = configureLogger({
     extName: meta.displayName,
