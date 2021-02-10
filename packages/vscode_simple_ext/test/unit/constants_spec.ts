@@ -16,12 +16,12 @@ describe("The simple VSCode Ext constants", () => {
 
     it("exposes a vscode configuration **key** with `LOGGING_LEVEL_PROP`'s value  ", () => {
       const configProps = meta?.contributes?.configuration?.properties;
-      expect(configProps).to.have.members([LOGGING_LEVEL_PROP]);
+      expect(configProps).to.have.property(LOGGING_LEVEL_PROP);
     });
 
     it("exposes a vscode configuration **key** with `SOURCE_LOCATION_PROP`'s value  ", () => {
       const configProps = meta?.contributes?.configuration?.properties;
-      expect(configProps).to.have.members([SOURCE_LOCATION_PROP]);
+      expect(configProps).to.have.property(SOURCE_LOCATION_PROP);
     });
   });
 });
