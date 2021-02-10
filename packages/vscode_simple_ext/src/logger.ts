@@ -4,7 +4,7 @@
 import { readFile as readFileCallback } from "fs";
 import { promisify } from "util";
 import { resolve } from "path";
-import { ExtensionContext, window, workspace } from "vscode";
+import { ExtensionContext, window } from "vscode";
 import { IChildLogger, IVSCodeExtLogger } from "@vscode-logging/types";
 import { configureLogger, NOOP_LOGGER } from "@vscode-logging/wrapper";
 import { LOGGING_LEVEL_PROP, SOURCE_LOCATION_PROP } from "./constants";
@@ -38,8 +38,6 @@ export async function initLogger(context: ExtensionContext): Promise<void> {
     loggingLevelProp: LOGGING_LEVEL_PROP,
     sourceLocationProp: SOURCE_LOCATION_PROP,
     subscriptions: context.subscriptions,
-    onDidChangeConfiguration: workspace.onDidChangeConfiguration,
-    getConfiguration: workspace.getConfiguration,
   });
 
   setLogger(extLogger);

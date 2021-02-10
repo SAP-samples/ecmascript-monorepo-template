@@ -2336,11 +2336,6 @@
   resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.51.0.tgz#f2e324d8385db95030b1454fd1f043618e08097d"
   integrity sha512-C/jZ35OT5k/rsJyAK8mS1kM++vMcm89oSWegkzxRCvHllIq0cToZAkIDs6eCY4SKrvik3nrhELizyLcM0onbQA==
 
-"@types/vscode@1.52.0":
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.52.0.tgz#61917968dd403932127fc4004a21fd8d69e4f61c"
-  integrity sha512-Kt3bvWzAvvF/WH9YEcrCICDp0Z7aHhJGhLJ1BxeyNP6yRjonWqWnAIh35/pXAjswAnWOABrYlF7SwXR9+1nnLA==
-
 "@types/webpack-dev-server@^3.11.0":
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.11.0.tgz#bcc3b85e7dc6ac2db25330610513f2228c2fcfb2"
@@ -2469,12 +2464,11 @@
   resolved "https://registry.yarnpkg.com/@vscode-logging/types/-/types-0.1.3.tgz#9ec39d46af9d278ac31b4b1f89de752cba73e068"
   integrity sha512-1mV/aMVXpm50PyJ4XYD0qPUREv6QcmPwuDtzdMcKeiXN5Tt/WmnyEHfUxENQr1Aes8Hr+EVtNK4tvrUXXco/5A==
 
-"@vscode-logging/wrapper@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@vscode-logging/wrapper/-/wrapper-0.2.0.tgz#44d31cbad6c942065541436ed836d9e394eafd1e"
-  integrity sha512-lyhYp0ZZ/Vr39FJU5RBLoFsVCWJCOoiwN/bTD5vEfvTbbfzNpBoArxnIFtI43bfXWDfoyQN3mCUiF10/im6+Zg==
+"@vscode-logging/wrapper@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vscode-logging/wrapper/-/wrapper-1.0.0.tgz#5df9a0b2d1d363954950df49dbfcc793cddd949d"
+  integrity sha512-Yr9c0jTy3XZ2YAOpuTsHz62+t7wZ1gzyT667WRACKjcimxwq0cI5VFtlJZrtbQf0iOw62Tjt5UfdO3vB4AE74A==
   dependencies:
-    "@types/vscode" "1.52.0"
     "@vscode-logging/logger" "^1.2.1"
     "@vscode-logging/types" "^0.1.3"
 

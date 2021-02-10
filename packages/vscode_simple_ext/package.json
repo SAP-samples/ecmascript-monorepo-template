@@ -56,7 +56,7 @@
   "dependencies": {
     "@ecmascript_monorepo_template/npm_package_javascript_library": "^1.1.0",
     "@ecmascript_monorepo_template/npm_package_typescript_library": "^1.1.0",
-    "@vscode-logging/wrapper": "0.2.0"
+    "@vscode-logging/wrapper": "1.0.0"
   },
   "devDependencies": {
     "@types/vscode": "1.51.0",
