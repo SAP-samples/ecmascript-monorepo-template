@@ -2120,10 +2120,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@sap-devx/webview-rpc@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@sap-devx/webview-rpc/-/webview-rpc-0.2.3.tgz#748f75725a8b62f32b966a6b533bf33fb3072fbf"
-  integrity sha512-6rgMO6SraQ34YPeRQiI0SO82J+u/6E+gpAJc++5zvo7LPQeCjCSKXALFrUEjFxQFeWP/eT00/Rig/jK0fJUnpA==
+"@sap-devx/webview-rpc@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@sap-devx/webview-rpc/-/webview-rpc-0.3.1.tgz#82cd5eafbf4b570c601bb19a861f77840f574ce3"
+  integrity sha512-wBgSJzsVZ/lpRLd1v1PuGjmnVZH+OlyFY0AmQoMDULVC/nb+E3C7t6VpP5FtRGCL5WsSs1xK7r4gLI4NO3b8kA==
   dependencies:
     ws "^7.2.3"
 
@@ -2731,7 +2731,7 @@
   optionalDependencies:
     vue-loader-v16 "npm:vue-loader@^16.1.0"
 
-"@vue/cli-shared-utils@^4.5.11", "@vue/cli-shared-utils@^4.5.9":
+"@vue/cli-shared-utils@^4.5.11":
   version "4.5.11"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.11.tgz#fff71673ee9128f998c691515b9d327071b4f41e"
   integrity sha512-+aaQ+ThQG3+WMexfSWNl0y6f43edqVqRNbguE53F3TIH81I7saS5S750ayqXhZs2r6STJJyqorQnKtAWfHo29A==
