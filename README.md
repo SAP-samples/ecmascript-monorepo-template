@@ -116,7 +116,3 @@ Contributions are most welcome.
 - Last but not least, please consider how your changes would affect **both** the:
   - Root level dev flows (e.g needed adjustment for linting/formatting).
   - Root level [usage/consumption instructions](./README.md#how-to-use-this-repository).
-
-## License
-
-Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
