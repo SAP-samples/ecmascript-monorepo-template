@@ -6,5 +6,8 @@
     {
       "path": "./packages/vscode_simple_ext"
     }
-  ]
+  ],
+  "files": [],
+  "include": [],
+  "exclude": []
 }
