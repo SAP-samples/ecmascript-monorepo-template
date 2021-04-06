@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/chai": "4.2.15",
-    "@types/mocha": "8.2.0",
+    "@types/mocha": "8.2.2",
     "@types/rimraf": "3.0.0",
     "chai": "4.3.4",
     "eslint": "7.23.0",
