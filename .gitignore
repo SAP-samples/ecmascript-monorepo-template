@@ -72,3 +72,6 @@ tsconfig.tsbuildinfo
 
 # generated artifacts
 dist
+
+# macos temp files
+.DS_Store

@@ -1,0 +1,18 @@
+diff --git a/node_modules/shelljs/shell.js b/node_modules/shelljs/shell.js
+index f9c6f36..f3ac3ba 100644
+--- a/node_modules/shelljs/shell.js
++++ b/node_modules/shelljs/shell.js
+@@ -20,10 +20,8 @@ var common = require('./src/common');
+ // Include the docs for all the default commands
+ //@commands
+
+-// Load all default commands
+-require('./commands').forEach(function (command) {
+-  require('./src/' + command);
+-});
++// PATCHED: only the `which` command is used (directly) by Yeoman.
++//          the dynamic `require` logic in shelljs is not properly bundled by `esbuild`
++require('./src/which');
+
+ //@
+ //@ ### exit(code)
