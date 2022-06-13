@@ -11,7 +11,7 @@ This can be useful if the generator installation performance is important.
 
 ## Highlights
 
-1. Entry point ([index_unbundled.js]()) of the un-bundled generator.
+1. Entry point ([index_unbundled.js](https://github.com/SAP-samples/ecmascript-monorepo-template/blob/main/packages/generator-yeoman-bundle-example/generators/app/templates/dummyfile.txt)) of the un-bundled generator.
 2. `esbuild` bundling [script](https://github.com/SAP-samples/ecmascript-monorepo-template/blob/a44d932196d619ff05f0100c12236f962ba32d38/packages/generator-yeoman-bundle-example/package.json#L26).
 3. dependencies patching [script](https://github.com/SAP-samples/ecmascript-monorepo-template/blob/a44d932196d619ff05f0100c12236f962ba32d38/packages/generator-yeoman-bundle-example/package.json#L25).
    - [patches directory](https://github.com/SAP-samples/ecmascript-monorepo-template/tree/main/packages/generator-yeoman-bundle-example/patches)
