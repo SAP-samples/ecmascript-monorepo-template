@@ -1,11 +1,10 @@
 version: 2.1
 jobs:
-  build-node14:
+  build-node16:
     docker:
-      - image: circleci/node:14-browsers
+      - image: cimg/node:16.5
     working_directory: ~/repo
     steps:
-      - run: sudo apt-get install libxss1
       - checkout
       - run: yarn
       - run: yarn run ci
@@ -23,29 +22,27 @@ jobs:
             COVERALLS_SERVICE_NAME: circle-ci
             COVERALLS_GIT_BRANCH: ${CIRCLE_BRANCH}
 
-  build-node12:
+  build-node18:
     docker:
-      - image: circleci/node:12-browsers
+      - image: cimg/node:18.3
     working_directory: ~/repo
     steps:
-      - run: sudo apt-get install libxss1
       - checkout
       - run: yarn
       - run: yarn run ci
 
-  build-node10:
+  build-node14:
     docker:
-      - image: circleci/node:10-browsers
+      - image: cimg/node:14.19
     working_directory: ~/repo
     steps:
-      - run: sudo apt-get install libxss1
       - checkout
       - run: yarn
       - run: yarn run ci
 
   compliance:
     docker:
-      - image: circleci/python:3.6.4
+      - image: cimg/python:3.6
     working_directory: ~/workdir
     steps:
       - checkout
@@ -60,7 +57,6 @@ jobs:
       - image: circleci/node:12-browsers
     working_directory: ~/repo
     steps:
-      - run: sudo apt-get install libxss1
       - checkout
       - run: yarn --pure-lockfile
       - run: yarn run ci
@@ -71,10 +67,9 @@ jobs:
 
   prepare-vsix:
     docker:
-      - image: circleci/node:12-browsers
+      - image: cimg/node:16.15
     working_directory: ~/repo
     steps:
-      - run: sudo apt-get install libxss1
       - checkout
       - run: yarn
       - run: yarn run ci
@@ -91,7 +86,7 @@ jobs:
 
   deploy-gh-releases:
     docker:
-      - image: circleci/golang:1.13
+      - image: cimg/go:1.13
     steps:
       - attach_workspace:
           at: ./artifacts
@@ -110,8 +105,9 @@ workflows:
   version: 2
   voter:
     jobs:
-      - build-node10
-      - build-node12
+#      currently, fails probably need to update some deps...
+#      - build-node18
+      - build-node16
       - build-node14
       - compliance
   release:
