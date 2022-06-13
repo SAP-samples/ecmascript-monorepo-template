@@ -4,6 +4,10 @@
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/generator-yeoman-bundle-example",
+      "**/generator-yeoman-bundle-example/**"
     ]
   },
   "scripts": {
