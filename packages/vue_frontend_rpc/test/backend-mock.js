@@ -12,15 +12,15 @@ const DefaultRPCFunctions = {
  * will be executed. Other non given functions will have default empty implementation.
  */
 export function backendMock(userProvidedRpcApis) {
+  const actualOpts = {};
+  for (const [rpcFuncName, rpcFuncDefault] of Object.entries(
+    DefaultRPCFunctions
+  )) {
+    // choose between user (optional) provided and default (NOOP)
+    actualOpts[rpcFuncName] =
+      userProvidedRpcApis[rpcFuncName] || rpcFuncDefault;
+  }
   return async function invokeMock(funcName, params) {
-    const actualOpts = {};
-    for (const [rpcFuncName, rpcFuncDefault] of Object.entries(
-      DefaultRPCFunctions
-    )) {
-      // choose between user (optional) provided and default (NOOP)
-      actualOpts[rpcFuncName] =
-        userProvidedRpcApis[rpcFuncName] || rpcFuncDefault;
-    }
     if (actualOpts[funcName]) {
       return actualOpts[funcName].apply(null, params);
     } else {

@@ -26,10 +26,9 @@ class BackendMock {
     const initObject = {
       port: 8081,
     };
-    for (const i in backendFuncNames) {
-      const funcName = backendFuncNames[i];
+    backendFuncNames.forEach((funcName) => {
       initObject[funcName] = ASYNC_NOOP;
-    }
+    });
     const actualOpts = defaults(opts, initObject);
 
     let rpc;
@@ -49,13 +48,12 @@ class BackendMock {
       const remoteAddress = req.socket.remoteAddress;
       console.log(`new ws connection from: ${remoteAddress}`);
       rpc = new RpcExtensionWebSockets(ws);
-      for (const i in backendFuncNames) {
-        const funcName = backendFuncNames[i];
+      backendFuncNames.forEach((funcName) => {
         rpc.registerMethod({
           func: actualOpts[funcName],
           thisArg: null,
         });
-      }
+      });
     });
   }
 
