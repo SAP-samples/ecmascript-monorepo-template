@@ -1,14 +1,14 @@
 import { expect } from "chai";
 import { mount } from "@vue/test-utils";
 const pDefer = require("p-defer");
-const getPort = require("get-port");
 import PersonForm from "@/components/person-form.vue";
-import { BackendMock } from "../../local-dev/backend-mock";
+import { backendMock } from "../backend-mock";
+import flushPromises from "flush-promises";
 
 describe("The Person Form", () => {
   describe("saving new data flow", () => {
-    let backendMock;
-    let port;
+    let mockInvokeObject;
+    let mountOptions;
     // Our backend and frontend both run under the same node.js process in this test.
     // However as they communicate with RPC over websockets they don't share the same "promise chains".
     // We use a deferred promise to resolve async waiting during the tests.
@@ -16,9 +16,7 @@ describe("The Person Form", () => {
     let saveDeferred = pDefer();
 
     before(async () => {
-      port = await getPort({ port: getPort.makeRange(9000, 10000) });
-      backendMock = new BackendMock({
-        port: port,
+      mockInvokeObject = backendMock({
         async onFrontendReady() {
           return {
             firstName: "Jane",
@@ -41,15 +39,20 @@ describe("The Person Form", () => {
           }
         },
       });
+
+      mountOptions = {
+        mocks: {
+          rpc: {
+            invoke: mockInvokeObject,
+          },
+        },
+      };
     });
 
     it("passes new data to be saved on button click", async () => {
-      const wrapper = await mount(PersonForm);
-      // We are invoking the rpc setup logic directly so we can:
-      // - Use a custom port.
-      // - Enable awaiting for the initialization logic as it seems
-      //   we cannot "await" for Vue life-cycle methods (e.g created) in tests.
-      await wrapper.vm.setupWsRPC(port);
+      const wrapper = await mount(PersonForm, mountOptions);
+      await flushPromises();
+
       const countryInput = wrapper.find("#country");
       expect(countryInput.element.value).to.eql("HappyLand");
 
@@ -60,10 +63,6 @@ describe("The Person Form", () => {
       // - Note this is an (almost) productive functional flow, not a pure unit test.
       //   We have a real frontend and backend communicating with RPC over a websocket.
       await saveDeferred.promise;
-    });
-
-    after(() => {
-      backendMock.shutdown();
     });
   });
 });

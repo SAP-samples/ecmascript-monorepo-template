@@ -5,6 +5,8 @@ const {
 } = require("@sap-devx/webview-rpc/out.ext/rpc-extension-ws");
 
 const ASYNC_NOOP = async () => {};
+// List of function names that represent backend APIs.
+const backendFuncNames = ["onFrontendReady", "save"];
 
 /**
  * A Backend mock using WebSockets.
@@ -21,11 +23,13 @@ class BackendMock {
    * @param [opts.onFrontendReady] {Function}
    */
   constructor(opts) {
-    const actualOpts = defaults(opts, {
+    const initObject = {
       port: 8081,
-      save: ASYNC_NOOP,
-      onFrontendReady: ASYNC_NOOP,
+    };
+    backendFuncNames.forEach((funcName) => {
+      initObject[funcName] = ASYNC_NOOP;
     });
+    const actualOpts = defaults(opts, initObject);
 
     let rpc;
     this.wss = new WebSocket.Server({ port: actualOpts.port }, () => {
@@ -44,23 +48,11 @@ class BackendMock {
       const remoteAddress = req.socket.remoteAddress;
       console.log(`new ws connection from: ${remoteAddress}`);
       rpc = new RpcExtensionWebSockets(ws);
-
-      rpc.registerMethod({
-        name: "onFrontendReady",
-        func: async () => {
-          console.log(`Frontend is ready!`);
-          return actualOpts.onFrontendReady();
-        },
-        thisArg: null,
-      });
-
-      rpc.registerMethod({
-        name: "save",
-        func: async (newEditorFileObject) => {
-          console.log(`Saving updated contents!`);
-          return actualOpts.save(newEditorFileObject);
-        },
-        thisArg: null,
+      backendFuncNames.forEach((funcName) => {
+        rpc.registerMethod({
+          func: actualOpts[funcName],
+          thisArg: null,
+        });
       });
     });
   }
