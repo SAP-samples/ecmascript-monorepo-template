@@ -26,6 +26,8 @@
     "clean": "rimraf generators/app/index.js",
     "patch:deps": "patch-package",
     "build": "npm run patch:deps && esbuild generators/app/index_unbundled.js --bundle --external:yeoman-environment --platform=node --outfile=generators/app/index.js",
-    "local-run": "yo yeoman-bundle-example"
+    "local-run": "yo yeoman-bundle-example",
+    "//": "The next script is used to move dependencies to dev dependencies before npm pack",
+    "prepack": "node scripts/handle_dep_script.js"
   }
 }
